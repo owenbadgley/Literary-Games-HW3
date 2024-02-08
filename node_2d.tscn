@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvqr5qtq6ptk4"]
+
+[ext_resource type="Texture2D" uid="uid://caag7wu8o51k1" path="res://Planets/Terran.png" id="1_d4fiv"]
+[ext_resource type="Texture2D" uid="uid://btvlef78dluoe" path="res://Planets/Lava.png" id="2_hihak"]
+[ext_resource type="Texture2D" uid="uid://bavlv10voau0o" path="res://Planets/Ice.png" id="3_hcwfu"]
+[ext_resource type="Texture2D" uid="uid://n5j1h6sk1d0r" path="res://Planets/Baren.png" id="4_y7r2y"]
+[ext_resource type="Texture2D" uid="uid://ch5bahbfa3gmk" path="res://Planets/sun-1.png (3).png" id="5_cpyfd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Terran" type="Sprite2D" parent="."]
+position = Vector2(756, 497)
+texture = ExtResource("1_d4fiv")
+
+[node name="Lava" type="Sprite2D" parent="."]
+position = Vector2(470, 413)
+texture = ExtResource("2_hihak")
+
+[node name="Ice" type="Sprite2D" parent="."]
+position = Vector2(403, 123)
+texture = ExtResource("3_hcwfu")
+
+[node name="Baren" type="Sprite2D" parent="."]
+position = Vector2(713, 258)
+texture = ExtResource("4_y7r2y")
+
+[node name="Sun-1_png(3)" type="Sprite2D" parent="."]
+position = Vector2(576, 329)
+scale = Vector2(0.232857, 0.244286)
+texture = ExtResource("5_cpyfd")
