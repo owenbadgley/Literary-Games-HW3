@@ -1,11 +1,20 @@
 extends Sprite2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var speed = 1  # Adjust the speed of the ellipse
+var a = 400      # Adjust the semi-major axis
+var b = 150      # Adjust the semi-minor axis
 
+var time = 0     # Variable to keep track of time
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	# Update time based on delta time
+	time += delta
+
+	# Calculate position in ellipse
+	var x = a * cos(time * speed)
+	var y = b * sin(time * speed)
+
+	# Set the position of the object
+	position.x = x
+	position.y = y
