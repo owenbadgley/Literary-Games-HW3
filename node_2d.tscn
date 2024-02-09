@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvqr5qtq6ptk4"]
+[gd_scene load_steps=10 format=3 uid="uid://cvqr5qtq6ptk4"]
 
 [ext_resource type="Texture2D" uid="uid://caag7wu8o51k1" path="res://Planets/Terran.png" id="1_d4fiv"]
 [ext_resource type="Script" path="res://Rotate.gd" id="2_djr02"]
 [ext_resource type="Texture2D" uid="uid://btvlef78dluoe" path="res://Planets/Lava.png" id="2_hihak"]
 [ext_resource type="Texture2D" uid="uid://bavlv10voau0o" path="res://Planets/Ice.png" id="3_hcwfu"]
+[ext_resource type="Script" path="res://ShatteredPlanet.gd" id="4_6whvo"]
 [ext_resource type="Texture2D" uid="uid://n5j1h6sk1d0r" path="res://Planets/Baren.png" id="4_y7r2y"]
 [ext_resource type="Texture2D" uid="uid://ch5bahbfa3gmk" path="res://Planets/sun-1.png (3).png" id="5_cpyfd"]
+[ext_resource type="Texture2D" uid="uid://bj0h0dygevgwm" path="res://Planet_Pack_bycancer/shattered_planet.png" id="7_08t2k"]
+[ext_resource type="Texture2D" uid="uid://b3avuqa3fkwx" path="res://SBS - Seamless Space Backgrounds - Large 1024x1024/Large 1024x1024/Purple Nebula/Purple_Nebula_08-1024x1024.png" id="9_1cwmv"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(105, 69)
+scale = Vector2(0.8, 0.8)
 
 [node name="Sun-1_png(3)" type="Sprite2D" parent="."]
 position = Vector2(579.25, 329)
@@ -16,32 +21,74 @@ texture = ExtResource("5_cpyfd")
 script = ExtResource("2_djr02")
 rotation_speed = 0.001
 
-[node name="Baren" type="Sprite2D" parent="Sun-1_png(3)"]
-position = Vector2(588.344, -290.643)
-scale = Vector2(4.29448, 4.09357)
-texture = ExtResource("4_y7r2y")
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(579.25, 329)
+scale = Vector2(1.2, 0.7)
+script = ExtResource("2_djr02")
+rotation_speed = 0.003
 
-[node name="Ice" type="Sprite2D" parent="Sun-1_png(3)"]
-position = Vector2(-426.401, 421.637)
-scale = Vector2(4.29448, 4.09357)
+[node name="ShatteredPlanet" type="Sprite2D" parent="Node2D"]
+position = Vector2(-398.125, 25.7143)
+scale = Vector2(0.143229, 0.232143)
+texture = ExtResource("7_08t2k")
+script = ExtResource("4_6whvo")
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(579.25, 329)
+script = ExtResource("2_djr02")
+rotation_speed = 0.004
+
+[node name="Ice" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-103.25, 103)
+scale = Vector2(1.03988, 1)
 texture = ExtResource("3_hcwfu")
 
-[node name="Lava" type="Sprite2D" parent="Sun-1_png(3)"]
-position = Vector2(-678.319, -650.877)
-scale = Vector2(4.29448, 4.09357)
-texture = ExtResource("2_hihak")
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(579.25, 329)
+script = ExtResource("2_djr02")
+rotation_speed = 0.001
 
-[node name="Ice" type="Sprite2D" parent="Sun-1_png(3)/Lava"]
+[node name="Baren" type="Sprite2D" parent="Node2D3"]
+position = Vector2(439.5, -297.75)
+scale = Vector2(1.03988, 1)
+texture = ExtResource("4_y7r2y")
+
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2(579.25, 329)
+script = ExtResource("2_djr02")
+rotation_speed = 0.003
+
+[node name="Lava" type="Sprite2D" parent="Node2D4"]
+position = Vector2(-179.25, -187.75)
+scale = Vector2(1.03988, 1)
+texture = ExtResource("2_hihak")
+script = ExtResource("2_djr02")
+rotation_speed = 0.001
+
+[node name="Ice" type="Sprite2D" parent="Node2D4/Lava"]
 position = Vector2(27.8879, -44)
 scale = Vector2(0.480826, 0.479167)
 texture = ExtResource("3_hcwfu")
 
-[node name="Terran" type="Sprite2D" parent="Sun-1_png(3)"]
-position = Vector2(773.006, 687.719)
-scale = Vector2(4.29448, 4.09357)
-texture = ExtResource("1_d4fiv")
+[node name="Node2D5" type="Node2D" parent="."]
+position = Vector2(579.25, 329)
+script = ExtResource("2_djr02")
+rotation_speed = 0.006
 
-[node name="Baren" type="Sprite2D" parent="Sun-1_png(3)/Terran"]
+[node name="Terran" type="Sprite2D" parent="Node2D5"]
+position = Vector2(308.25, 287.25)
+scale = Vector2(1.03988, 1)
+texture = ExtResource("1_d4fiv")
+script = ExtResource("2_djr02")
+rotation_speed = 0.003
+
+[node name="Baren" type="Sprite2D" parent="Node2D5/Terran"]
 position = Vector2(-24.4528, 44)
 scale = Vector2(0.480826, 0.520833)
 texture = ExtResource("4_y7r2y")
+
+[node name="PurpleNebula08-1024x1024" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(590, 320)
+scale = Vector2(1.41113, 0.791016)
+texture = ExtResource("9_1cwmv")
